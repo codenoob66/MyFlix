@@ -14,6 +14,14 @@ const Admin = () => {
     const [showForm, setShowForm] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+
+    useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    setIsLoggedIn(true);
+  }
+}, []);
+
     const handleChange = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
@@ -64,6 +72,18 @@ const Admin = () => {
         setMessage("Error connecting to server.");
       }
     };
+
+    if (!isLoggedIn) {
+      return (
+        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-800 pt-28 pb-16 flex items-center justify-center">
+          <AdminLogin
+            isOpen={true}
+            onClose={() => window.history.back()}
+            onSuccess={() => setIsLoggedIn(true)}
+          />
+        </div>
+      );
+    }
 
 
   return (

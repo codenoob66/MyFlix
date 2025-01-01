@@ -9,8 +9,20 @@ const Navbar = () => {
 
 
   const handleLoginSuccess = () => {
-    navigate("/Admin")
+    setIsLoginOpen(false); // ✅ Close modal
+    navigate("/Admin");
   }
+
+  const handleAdminClick = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      // Already logged in, go directly to admin
+      navigate("/Admin");
+    } else {
+      // Not logged in, show login modal
+      setIsLoginOpen(true);
+    }
+  };
 
   const handleRefresh = () => {
     navigate("/")
@@ -51,7 +63,7 @@ const Navbar = () => {
           Movies
         </li>
         <li >
-           <button onClick={()=> setIsLoginOpen(true)} className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0">
+           <button onClick={handleAdminClick} className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0">
             Admin
           </button>
             

@@ -3,7 +3,14 @@ import cors from "cors"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
 import Movie from "./Models/Movie.js"
+import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken";
 
+const adminUser = {
+  id:1,
+  username: "rafael",
+  password: "$2b$10$nvtbj9I51T4LZMFY0OAxAO/ubojnOChrQ/s3iLtRJNd4TWyY6eUl2"
+}
 
 dotenv.config()
 
@@ -63,6 +70,31 @@ app.delete("/movies/:id", async (req, res) => {
 });
 
 
+app.post("/login", async (req, res) => {
+  try {
+    const { username, password } = req.body; // ✅ extract from body
+
+    if (username !== adminUser.username) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const validPass = await bcrypt.compare(password, adminUser.password);
+    if (!validPass) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const token = jwt.sign(
+      { id: adminUser.id, username: adminUser.username },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" } // expires in 1 hour
+    );
+
+    res.json({ token });
+  } catch (error) {
+    console.error("Error with server:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`server running at port ${PORT}`);

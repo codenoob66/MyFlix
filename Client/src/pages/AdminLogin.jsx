@@ -4,18 +4,31 @@ import { createPortal } from "react-dom";
 const AdminLogin = ({ isOpen, onClose, onSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const BASE_URL = "https://myflix-ff2q.onrender.com"
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (username === "rafael" && password === "123") {
-      onSuccess();
-      onClose();
-    } else {
-      alert("Invalid credentials");
-    }
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const response = await fetch(`${BASE_URL}/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password }),
+  });
+
+  const data = await response.json();
+  console.log("Response:", data);
+
+  if (response.ok) {
+    localStorage.setItem("token", data.token); // ✅ store JWT locally
+    alert("Login successful!");
+    onSuccess()
+  } else {
+    alert(data.message);
+  }
+};
+
 
   return createPortal(
     <div className="fixed inset-0 backdrop-blur-xs flex items-center justify-center z-50">
