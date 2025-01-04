@@ -46,17 +46,7 @@ const Navbar = () => {
           <Link className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0" to="/Admin">
             Admin
           </Link>
-        </li>
-        <li>
-          <Link className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0" to="/addMovies">
-            Add Movies
-          </Link>
-        </li>
-        <li>
-          <Link className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0" to="/DeleteMovies">
-            Delete Movies
-          </Link>
-        </li>
+        </li>    
       </ul>
 
       {/* Profile */}
