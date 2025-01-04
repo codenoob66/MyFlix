@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const AddMoviepage = () => {
+  const BASE_URL = "https://myflix-ff2q.onrender.com/"
   const [form, setForm] = useState({
     title: "",
     thumbnail: "",
@@ -16,7 +17,7 @@ const AddMoviepage = () => {
     e.preventDefault();
     setMessage("");
     try {
-      const res = await fetch("http://localhost:5000/movies", {
+      const res = await fetch(`${BASE_URL}/movies`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

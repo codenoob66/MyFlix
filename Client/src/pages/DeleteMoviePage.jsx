@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 const DeleteMoviePage = () => {
+  const BASE_URL = "https://myflix-ff2q.onrender.com/"
   const [movies, setMovies] = useState([]);
   const [message, setMessage] = useState("");
 
   // Fetch movies on mount
   useEffect(() => {
-    fetch("http://localhost:5000")
+    fetch(BASE_URL)
       .then((res) => res.json())
       .then((data) => setMovies(data))
       .catch(() => setMessage("Failed to load movies."));
@@ -16,7 +17,7 @@ const DeleteMoviePage = () => {
   const handleDelete = async (id) => {
     setMessage("");
     try {
-      const res = await fetch(`http://localhost:5000/movies/${id}`, {
+      const res = await fetch(`${BASE_URL}movies/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
