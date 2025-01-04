@@ -3,6 +3,7 @@ import {Link, useNavigate} from "react-router-dom"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   const handleRefresh = () => {
     navigate("/")
