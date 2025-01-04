@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import React from "react";
 
 const Admin = () => {
     const BASE_URL = "https://myflix-ff2q.onrender.com/"
