@@ -64,7 +64,7 @@ const Homepage = () => {
 
       <section>
         <MovieCatalog
-          title="Available Movies"
+          title="Available Movies today"
           movies={sampleMovies}
           onSelect={handlePlay} // Pass the function to update selectedMovie
         />
