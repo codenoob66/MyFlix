@@ -45,7 +45,7 @@ export default function MovieCatalog({ title, movies, onSelect }) {
               <img
                 src={movie.thumbnail || "https://via.placeholder.com/300x170"}
                 alt={movie.title}
-                className="w-full h-[100px] sm:h-[140px] md:h-[180px] object-cover rounded-xl transition-transform duration-300 transform group-hover/movie:scale-105 shadow-xl"
+                className="w-full h-[100px] sm:h-[140px] md:h-[180px] object-contain rounded-xl bg-black transition-transform duration-300 transform group-hover/movie:scale-105 shadow-xl"
               />
 
               {/* Hover Overlay */}
@@ -59,20 +59,40 @@ export default function MovieCatalog({ title, movies, onSelect }) {
         ))}
       </Swiper>
 
-      {/* Custom Arrows (hidden until hover) */}
+      {/* Custom Arrows with SVG Icons */}
       <button
         className="prev-btn absolute left-0 top-1/2 -translate-y-1/2 z-10 
           hidden group-hover:flex items-center justify-center 
           bg-black/60 hover:bg-black text-white rounded-full w-10 h-10 transition"
+        aria-label="Previous"
       >
-        ◀
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
       </button>
       <button
         className="next-btn absolute right-0 top-1/2 -translate-y-1/2 z-10 
           hidden group-hover:flex items-center justify-center 
           bg-black/60 hover:bg-black text-white rounded-full w-10 h-10 transition"
+        aria-label="Next"
       >
-        ▶
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
       </button>
     </section>
   );
