@@ -19,16 +19,21 @@ export default function MovieCatalog({ title, movies, onSelect }) {
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        spaceBetween={10}
-        slidesPerView={"auto"}
+        spaceBetween={12}
+        slidesPerView={2}
+        loop={true} // Enable infinite scroll
         navigation={{
           nextEl: ".next-btn",
           prevEl: ".prev-btn",
         }}
         breakpoints={{
-          320: { slidesPerView: 2, spaceBetween: 12 },
-          640: { slidesPerView: 3, spaceBetween: 14 },
-          1024: { slidesPerView: 5, spaceBetween: 16 },
+          320: { slidesPerView: 2, spaceBetween: 12 },    // Small phones
+          480: { slidesPerView: 2.5, spaceBetween: 14 },  // Larger phones
+          640: { slidesPerView: 3, spaceBetween: 16 },    // Tablets
+          768: { slidesPerView: 4, spaceBetween: 18 },    // Small laptops
+          1024: { slidesPerView: 5, spaceBetween: 20 },   // Desktops
+          1280: { slidesPerView: 6, spaceBetween: 22 },   // Large screens
+          1536: { slidesPerView: 7, spaceBetween: 24 },   // Extra large screens
         }}
         className="px-8"
       >
