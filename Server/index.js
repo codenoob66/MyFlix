@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
+import Movie from "./models/Movie.js";
 
 
 dotenv.config()
@@ -16,23 +17,6 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("✅ MongoDB Atlas connected"))
 .catch(err => console.error("❌ MongoDB connection error:", err));
-
-const movieSchema = mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  thumbnail: {
-    type: String,
-    required: true,
-  },
-  src: {
-    type: String,
-    required: true,
-  },
-});
-
-const Movie = mongoose.model("Movie", movieSchema);
 
 app.get("/", async (req, res) => {
   try {
