@@ -7,16 +7,14 @@ const Homepage = () => {
   const BASE_URL = "https://myflix-ff2q.onrender.com/"
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [movies, setMovies] = useState([])
-  const inputRef = useRef(null)
+  const targetRef = useRef(null)
 
   const handlePlay = (movie) => {
     setSelectedMovie(movie);
   };
 
   const handleFocus = () => {
-    if(inputRef.current){
-      inputRef.current.focus()
-    }
+    targetRef.current?.scrollIntoView({behavior: 'smooth'})
   };
 
   async function getMovies() {
@@ -36,16 +34,18 @@ useEffect(() => {
     <div className="p-6 bg-black text-white min-h-screen">
     
 
-      <section className="mb-10" ref={inputRef}>
-        <VideoPlayer src={selectedMovie?.src} />
+      <section className="mb-10" >
+        <VideoPlayer ref={targetRef} src={selectedMovie?.src} />
       </section>
 
       <section>
         <MovieCatalog
           title="Available Movies today"
           movies={movies}
-          onSelect={handlePlay} // Pass the function to update selectedMovie
-          onClick={handleFocus}
+          onSelect={(movie) => {
+            handlePlay(movie)
+            handleFocus()
+          }} // Pass the function to update selectedMovie
         />
       </section>
     </div>
