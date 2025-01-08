@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Link, useNavigate} from "react-router-dom"
+import AdminLogin from "../pages/AdminLogin";
 
 const Navbar = () => {
+  const [isLoginOpen, setIsLoginOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate()
+
+
+  const handleLoginSuccess = () => {
+    navigate("/Admin")
+  }
 
   const handleRefresh = () => {
     navigate("/")
   }
 
   return (
+
     <nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md text-white px-6 py-4 flex items-center justify-between shadow-md z-50">
       {/* Logo */}
       <div className="text-2xl font-bold text-red-600 tracking-wide cursor-pointer">
@@ -43,14 +51,16 @@ const Navbar = () => {
           Movies
         </li>
         <li >
-          <Link className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0" to="/Admin">
+           <button onClick={()=> setIsLoginOpen(true)} className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0">
             Admin
-          </Link>
+          </button>
+            
         </li>    
       </ul>
-
+        <AdminLogin isOpen={isLoginOpen} onClose={()=> setIsLoginOpen(false)} onSuccess={handleLoginSuccess} />
       {/* Profile */}
     </nav>
+    
   );
 };
 

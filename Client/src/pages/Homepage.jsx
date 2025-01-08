@@ -47,6 +47,7 @@ useEffect(() => {
             handleFocus()
           }} // Pass the function to update selectedMovie
         />
+
       </section>
     </div>
   );

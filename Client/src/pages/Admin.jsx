@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AdminLogin from "./AdminLogin"
 
 const Admin = () => {
     const BASE_URL = "https://myflix-ff2q.onrender.com/"
@@ -11,6 +12,7 @@ const Admin = () => {
         src: "",
       });
     const [showForm, setShowForm] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handleChange = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
@@ -65,6 +67,7 @@ const Admin = () => {
 
 
   return (
+    
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-800 pt-28 pb-16 flex flex-col items-center">
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">Welcome to the admin dashboard</h1>
       <div className="w-full max-w-4xl">
@@ -178,6 +181,8 @@ const Admin = () => {
         </div>
       )}
     </div>
+
+    
   )
 }
 
