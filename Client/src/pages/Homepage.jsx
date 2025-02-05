@@ -4,7 +4,7 @@ import MovieCatalog from "../components/MovieCatalog";
 import { useEffect, useRef} from "react";
 
 const Homepage = () => {
-  const BASE_URL = "https://myflix-production.up.railway.app/"
+  const BASE_URL = "https://myflix-0zhg.onrender.com"
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [movies, setMovies] = useState([])
   const targetRef = useRef(null)
