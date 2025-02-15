@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const DeleteMoviePage = () => {
-  const BASE_URL = "https://myflix-0zhg.onrender.com"
+  const BASE_URL = "https://myflix-0zhg.onrender.com/"
   const [movies, setMovies] = useState([]);
   const [message, setMessage] = useState("");
 
@@ -17,7 +17,7 @@ const DeleteMoviePage = () => {
   const handleDelete = async (id) => {
     setMessage("");
     try {
-      const res = await fetch(`${BASE_URL}/movies/${id}`, {
+      const res = await fetch(`${BASE_URL}movies/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
