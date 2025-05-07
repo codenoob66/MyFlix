@@ -3,7 +3,6 @@ import AdminLogin from "./AdminLogin"
 
 const Admin = () => {
     const BASE_URL = "https://myflix-drnx.onrender.com"
-    // const BASE_URL = "http://localhost:5000"
     const [movies, setMovies] = useState([]);
     const [message, setMessage] = useState("");
     const [form, setForm] = useState({
@@ -59,7 +58,7 @@ const Admin = () => {
     const handleDelete = async (id) => {
       setMessage("");
       try {
-        const res = await fetch(`${BASE_URL}movies/${id}`, {
+        const res = await fetch(`${BASE_URL}/movies/${id}`, {
           method: "DELETE",
         });
         if (res.ok) {
