@@ -5,7 +5,7 @@ const MovieCatalog = ({ title, movies, onSelect }) => {
   return (
     <section className="mb-12">
       {/* Section Title */}
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-6 px-4">
+      <h2 className="text-lg sm:text-2xl md:text-2xl font-extrabold text-white mb-6 px-4">
         {title}
       </h2>
 

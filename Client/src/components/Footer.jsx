@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-400 py-10">
+    <footer className="bg-black text-gray-400 pb-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-sm">
         {/* Column 1 */}
         <div>
@@ -70,7 +70,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="mt-10 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} MyFlix, Inc. All rights reserved.
+        © {new Date().getFullYear()} MyFlix, Inc. was built by Rafael Cordova.
       </div>
     </footer>
   );

@@ -41,9 +41,6 @@ const Navbar = () => {
       </ul>
 
       {/* Profile */}
-      <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-red-500 transition">
-        <span className="text-xs">U</span>
-      </div>
     </nav>
   );
 };

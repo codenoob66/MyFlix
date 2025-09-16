@@ -11,35 +11,30 @@ const Homepage = () => {
 
   const sampleMovies = [
     {
-      id: 1,
       title: "Taong Grasa",
       thumbnail:
         "https://m.media-amazon.com/images/M/MV5BODYxNzAwMzYtYWIxOC00NTYxLWE3MjYtYjBjZTU0ODQwNjNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
       src: "https://drive.google.com/file/d/1HOcv03poQBMuscFJzHBQ9vx1zbTqnbfC/preview#toolbar=0",
     },
     {
-      id: 2,
       title: "Virgin forest",
       thumbnail:
         "https://m.media-amazon.com/images/M/MV5BYWU0N2E2MjUtMmFjNy00YjQ4LTk4NTctYmU0Zjg3ZWNhNDM0XkEyXkFqcGc@._V1_.jpg",
       src: "https://drive.google.com/file/d/1zn_d91yqEKYbd331TebMJ8_0GDEeO8xO/preview#toolbar=0",
     },
     {
-      id: 3,
       title: "Sila ay akin",
       thumbnail:
         "https://m.media-amazon.com/images/M/MV5BZWM5Y2ZiYjItZjZmOC00YTk4LWI2OGYtMTUzZmUyMmI2MDZlXkEyXkFqcGc@._V1_.jpg",
       src: "https://drive.google.com/file/d/1laLDgEJXs0Ww78QPkdhracwdXkOirpv5/preview#toolbar=0",
     },
     {
-      id: 4,
       title: "Kaulayaw",
       thumbnail:
         "https://m.media-amazon.com/images/M/MV5BYmYxNmI2YzAtMGNiNy00NmQyLTlkMzUtNTgwYzYzNTIwZGI0XkEyXkFqcGc@._V1_.jpg",
       src: "https://drive.google.com/file/d/1BsUOddiZszQ2jcCVQ5UOkU8spGfwAddY/preview#toolbar=0",
     },
     {
-      id: 5,
       title: "Ligaw",
       thumbnail:
         "https://m.media-amazon.com/images/M/MV5BMWZjZjNjMDQtZjM0My00MGNmLThiZmItMDY2MDEwZWI1M2Y3XkEyXkFqcGc@._V1_.jpg",
@@ -50,6 +45,12 @@ const Homepage = () => {
       thumbnail:
         "https://m.media-amazon.com/images/M/MV5BYjJmYWFiMGUtZmU5ZS00ZTc3LTk3NmYtZjVhZGJiMGU2ODZmXkEyXkFqcGc@._V1_.jpg",
       src: "https://drive.google.com/file/d/1A1ui3tQ2U6zutQDqtzuRW9HJ83NIV1Eo/preview",
+    },
+    {
+      title: "Kandungan",
+      thumbnail:
+        "https://m.media-amazon.com/images/M/MV5BNDhjNjM3MmYtYzgyYS00ZGNkLTk5OTMtMzEwZmRlY2I1MjgwXkEyXkFqcGc@._V1_.jpg",
+      src: "https://drive.google.com/file/d/1DdU9FvQZqoXnPB87yOoBs-EiBQNHbyzv/preview",
     },
   ];
 
