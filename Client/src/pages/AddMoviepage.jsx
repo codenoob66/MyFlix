@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const AddMoviepage = () => {
-  const BASE_URL = "https://myflix-ff2q.onrender.com/"
+  const BASE_URL = "https://myflix-ff2q.onrender.com"
   const [form, setForm] = useState({
     title: "",
     thumbnail: "",
