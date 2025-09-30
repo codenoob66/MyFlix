@@ -1,6 +1,0 @@
-.movie-row {
-  scrollbar-width: none; /* Firefox */
-}
-.movie-row::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
