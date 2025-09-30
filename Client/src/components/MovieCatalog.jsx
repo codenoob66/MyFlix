@@ -10,7 +10,7 @@ export default function MovieCatalog({ title, movies, onSelect }) {
   return (
     <section className="mb-12 group relative">
       {/* Section Title */}
-      <h2 className="text-lg sm:text-2xl font-extrabold text-white mb-6 px-4">
+      <h2 className="text-center text-lg sm:text-2xl font-extrabold text-white mb-6 px-4">
         {title}
       </h2>
 
