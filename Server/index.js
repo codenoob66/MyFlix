@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
-import Movie from "./models/Movie.js";
+import Movie from "./Models/Movie.js"
 
 
 dotenv.config()
