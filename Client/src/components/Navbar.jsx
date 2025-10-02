@@ -42,7 +42,7 @@ const Navbar = () => {
         <li className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0">
           Movies
         </li>
-        <li className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0">
+        <li >
           <Link className="hover:text-red-500 cursor-pointer transition px-6 py-2 md:py-0" to="/Admin">
             Admin
           </Link>
