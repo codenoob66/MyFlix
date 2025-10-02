@@ -20,7 +20,7 @@ const Admin = () => {
     e.preventDefault();
     setMessage("");
     try {
-      const res = await fetch(`${BASE_URL}/movies`, {
+      const res = await fetch(`${BASE_URL}movies`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
