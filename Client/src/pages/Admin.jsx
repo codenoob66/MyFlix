@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AdminLogin from "./AdminLogin"
 
 const Admin = () => {
-    const BASE_URL = "https://myflix-0zhg.onrender.com/"
+    const BASE_URL = "https://myflix-0zhg.onrender.com"
     // const BASE_URL = "http://localhost:5000"
     const [movies, setMovies] = useState([]);
     const [message, setMessage] = useState("");
@@ -30,7 +30,7 @@ const Admin = () => {
     e.preventDefault();
     setMessage("");
     try {
-      const res = await fetch(`${BASE_URL}movies`, {
+      const res = await fetch(`${BASE_URL}/movies`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
