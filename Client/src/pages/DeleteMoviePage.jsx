@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const DeleteMoviePage = () => {
-  const BASE_URL = "https://myflix-0zhg.onrender.com"
+  const BASE_URL = "https://myflix-drnx.onrender.com"
   const [movies, setMovies] = useState([]);
   const [message, setMessage] = useState("");
 

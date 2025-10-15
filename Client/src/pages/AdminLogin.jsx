@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 const AdminLogin = ({ isOpen, onClose, onSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const BASE_URL = "https://myflix-0zhg.onrender.com"
+  const BASE_URL = "https://myflix-drnx.onrender.com"
 
   if (!isOpen) return null;
 
