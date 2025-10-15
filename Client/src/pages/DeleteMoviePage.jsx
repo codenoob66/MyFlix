@@ -17,7 +17,7 @@ const DeleteMoviePage = () => {
   const handleDelete = async (id) => {
     setMessage("");
     try {
-      const res = await fetch(`${BASE_URL}/Movies/${id}`, {
+      const res = await fetch(`${BASE_URL}/movies/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
