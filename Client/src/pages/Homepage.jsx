@@ -4,7 +4,7 @@ import MovieCatalog from "../components/MovieCatalog";
 import { useEffect, useRef} from "react";
 
 const Homepage = () => {
-  const BASE_URL = "https://myflixapi.codesbyrafael.com"
+  const BASE_URL = "http://localhost:5000"
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [movies, setMovies] = useState([])
   const targetRef = useRef(null)
