@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 const AdminLogin = ({ isOpen, onClose, onSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const BASE_URL = "https://myflixapi.codesbyrafael.com"
+  const BASE_URL = "http://localhost:5000"
 
   if (!isOpen) return null;
 
