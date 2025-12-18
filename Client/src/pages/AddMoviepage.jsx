@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const AddMoviepage = () => {
-  const BASE_URL = "https://myflixapi.codesbyrafael.com"
+  const BASE_URL = "http://localhost:5000"
   const [form, setForm] = useState({
     title: "",
     thumbnail: "",
