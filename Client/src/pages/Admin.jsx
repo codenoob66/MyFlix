@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AdminLogin from "./AdminLogin"
 
 const Admin = () => {
-    const BASE_URL = "http://localhost:5000"
+    const BASE_URL = "https://myflix-backend.codesbyrafael.com"
     const [movies, setMovies] = useState([]);
     const [message, setMessage] = useState("");
     const [form, setForm] = useState({
